@@ -1,0 +1,29 @@
+/**
+ * Stack object
+ * Blocks of full-width flow content should have margin between them.
+ * Defaults to 1em, can be increased by updating --stack-space variable
+ * 
+ * @see https://every-layout.dev/layouts/stack/
+ */
+.stack {
+	> * {		
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	> * + * {
+		margin-top: var(--stack-space, 1em);
+	}
+}
+
+
+/// Generic remove margin styles
+
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+

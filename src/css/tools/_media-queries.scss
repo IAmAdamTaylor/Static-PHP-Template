@@ -1,0 +1,58 @@
+// Media Query Helper
+
+// Convert pixels to em units based on a certain root font size.
+// @param pixels $pixels 					The amount of pixels to convert.
+// @param pixels $root-font-size  The font size on the html element.
+// @return em 										The amount of pixels converted to em units.
+@function em( $pixels ) {
+	$root-font-size: 16px !default;
+
+	@return ( $pixels / $root-font-size ) * 1em;
+}
+
+// Create a width based media query
+// @param pixels $above  The minimum width the media query is applied at.
+// @param pixels $under  The maximum width the media query is applied at.
+@mixin atWidth( $above: false, $under: false ) {
+	$query-string: "only screen ";
+
+	@if $above {
+		$query-string: "#{$query-string} and ( min-width: #{ em($above) } )";
+	}
+
+	@if $under {
+		$query-string: "#{$query-string} and ( max-width: #{ em($under) } )";
+	}
+
+	@media #{$query-string} {
+		@content;
+	}
+}
+
+// Create a height based media query
+// @param pixels $above  The minimum height the media query is applied at.
+// @param pixels $under  The maximum height the media query is applied at.
+@mixin atHeight( $above: false, $under: false ) {
+	$query-string: "only screen ";
+
+	@if $above {
+		$query-string: "#{$query-string} and ( min-height: #{ em($above) } )";
+	}
+
+	@if $under {
+		$query-string: "#{$query-string} and ( max-height: #{ em($under) } )";
+	}
+
+	@media #{$query-string} {
+		@content;
+	}
+}
+
+// Generic media query wrapper for any property and breakpoint
+// @param pixels $property 		 The property for the media query.
+// @param pixels $breakpoint   The brekpoint to apply this media query at.
+@mixin atBreakpoint( $property, $breakpoint ) {
+	@media only screen and ( #{ $property }: #{ em($breakpoint) } ) {
+		@content;
+	}
+}

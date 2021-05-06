@@ -1,0 +1,121 @@
+// Scaffolding, generic base styles
+
+:root {
+
+}
+
+html {
+	
+}
+
+body {
+	color: $color-text;
+
+	font-family: $font-stack-body;
+}
+
+// selected text
+::selection {
+	// background: ;
+	// color: ;
+}
+
+/**
+ * Heading styles.
+ * Class version can be used to style a h1 as a h2 for semantic purposes.
+ */
+
+@mixin heading-selectors() {
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		@content;
+	}	
+}
+
+@include heading-selectors() {
+	font-family: $font-stack-heading;
+	line-height: 1.1;
+}
+
+h1,
+.h1 {
+	// font-size: ;
+}
+
+h2,
+.h2 {
+	// font-size: ;
+}
+
+h3,
+.h3 {
+	// font-size: ;
+}
+
+h4,
+.h4 {
+	// font-size: ;
+}
+
+h5,
+.h5 {
+	// font-size: ;
+}
+
+h6,
+.h6 {
+	// font-size: ;
+}
+
+/**
+ * Link element pseudo classes.
+ */
+
+a:not([class]) {
+	// any non-visited link
+	&:link {
+
+	}
+
+	&:visited {
+		
+	}
+
+	&:focus {
+		
+	}
+
+	&:hover {
+		
+	}
+
+	&:active {
+		
+	}
+}
+
+/**
+ * Default table styling.
+ */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	// Show captions at bottom of table
+	caption {
+		caption-side: bottom;
+		padding-top: 0.5em;
+
+		font-size: 0.9em;
+	}
+
+	// Relative padding and thin border
+	th,
+	td {
+		padding: 0.25em 0.5em;
+		border: 1px solid rgba(0,0,0,0.4);
+
+		text-align: left;
+	}
+}

@@ -1,0 +1,48 @@
+// Sass variables for the project
+
+/**
+ * Set project font stacks.
+ * Generic fallbacks are provided but should be tailored to the project.
+ *
+ * $sans-serif-fallback: Helvetica, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ * $serif-fallback: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+ */
+$font-stack-body: sans-serif;
+$font-stack-heading: serif;
+
+
+/**
+ * Set third-party variable overrides.
+ * e.g. Slick, Bourbon
+ */
+
+// $slick-font-path: "../../static/slick/fonts/";
+// $slick-loader-path: "../../static/slick/";
+
+
+/// Project colour palette
+
+/**
+ * 2-step colour system.
+ * A colour is defined using it's name, e.g. red, violet, peach
+ * Then the possible use cases are defined referring to the named colours,
+ * e.g. $color-body, $color-header-bg.
+ *
+ * The use case variables are preferred for most styling cases
+ * with the colour name variables being used as sparingly as possible
+ */
+
+$base-grey: #333;
+
+$error-red: #d81e1e;
+$warning-orange: #ff6700;
+$success-green: #4bb543;
+
+// BRAND PALETTE
+
+
+// USE CASES
+
+$color-text: $base-grey;
+
+$color-form-error: $warning-orange;

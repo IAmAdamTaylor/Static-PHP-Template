@@ -1,0 +1,18 @@
+# Ignore Mac hidden files
+.AppleDouble
+.DS_Store
+
+# Ignore general files, backups and database
+*.bak
+*.sql
+.tweetcache
+node_modules
+
+# Ignore generated files
+.sass-cache
+
+# Ignore server side files
+.htaccess
+robots.txt
+sitemap.xml
+documents

@@ -1,0 +1,32 @@
+// Main screen style sheet
+// Imports all of the SCSS partials
+
+// START VARIABLE OVERRIDES
+
+// END VARIABLE OVERRIDES
+
+// Import settings/variables
+@import "base/variables"; 
+
+// Import all tools
+@import "tools/**/*";
+
+// import resets and base styling in specific order
+@import "base/reset"; 
+@import "base/load-webfonts"; 
+@import "base/scaffolding"; 
+
+// Import third-party libraries, can be overridden by components below
+@import "libraries/**";
+
+// Import abstracted objects/patterns and project components
+@import "objects/**/*";
+@import "components/**/*";
+
+// Import inbox & shame (hacks) styles
+@import "inbox";
+@import "shame";
+
+// Import any utility classes
+// Last as they have the highest specifity
+@import "utilities/**/*"; 

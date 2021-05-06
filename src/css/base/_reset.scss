@@ -1,0 +1,116 @@
+// box-sizing rules
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+// reset background to most used values
+* {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+// remove default margin
+body,
+h1, h2, h3, h4,
+p,
+ul[class],
+ol[class],
+li,
+figure, figcaption,
+blockquote,
+dl, dd {
+	margin: 0;
+}
+
+// remove default padding & list style, only if class applied
+ul[class],
+ol[class] {
+	padding: 0;
+	list-style: none;
+}
+
+// set body defaults
+/**
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ * 3. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	overflow-y: scroll; /* [1] */
+	min-height: 100%; /* [2] */
+	-webkit-text-size-adjust: 100%; /* [3] */
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+// show cursor for interactive elements
+a,
+button {
+	cursor: pointer;
+}
+
+/**
+ * Turn off default button styles. 
+ * Allows buttons to be used for pure semantics if needed.
+ * Any designed buttons will use a component class.
+ */
+button {
+	padding: 0;
+	border: none;
+	margin: 0;
+
+	background: none;
+	color: inherit;
+	font-weight: inherit;
+	text-transform: inherit;
+	text-align: left;
+}
+
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+	max-width: 100%; /* [1] */
+	font-style: italic; /* [2] */
+	vertical-align: middle; /* [3] */
+}
+
+// inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/**
+ * Ensure hidden elements are hidden.
+ * (Opinionated) !important used so that components can't accidentally make them visible.
+ */
+template,
+[hidden] {
+  display: none !important;
+}
+
+// Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
