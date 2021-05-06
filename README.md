@@ -1,4 +1,7 @@
-README.md
+# PHP Static Website Template
+
+This template works best when downloaded as a zip file and then copied to the project direcrory.
+
 
 This project requires the following packages to run. See below for installation instructions.
 
